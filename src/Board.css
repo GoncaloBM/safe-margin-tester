@@ -1,0 +1,228 @@
+.wrapper {
+  width: 70%;
+}
+.board {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 1px solid rgb(113, 113, 113);
+  width: 100%;
+  padding-bottom: 56.25%;
+  margin-top: 8%;
+  margin-left: 2vw;
+  float: left;
+  bottom: 2%;
+}
+
+.text {
+  padding: 13%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.ActionMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  border: 0.6px solid rgb(215, 215, 215);
+  width: 24%;
+  margin-top: 4.5%;
+  float: right;
+ margin-bottom: 1%;
+  left: 3%;
+}
+
+.ActionButton {
+  position: absolute;
+  width: 90%;
+  bottom: 53%;
+  flex-direction: row;
+  justify-content: center;
+  bottom: 22vw;
+}
+
+.hexaTab {
+  bottom: 40%;
+  width: 83%;
+  height: 11%;
+  position: absolute;
+  background-color: rgb(38, 38, 38);
+  color: rgb(255, 255, 255);
+  font-size: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.hexaTab-top {
+  top: 61%;
+  width: 90%;
+  height: 37%;
+  position: absolute;
+  background-color: rgb(38, 38, 38);
+  color: rgb(255, 255, 255);
+  align-items: center;
+  justify-content: center;
+}
+
+.hexadecimal {
+  font-size: 2.2em;
+  font-weight: normal;
+  margin-top: -1rem;
+}
+
+.instructions {
+  font-variant: small-caps;
+  font-size: 1.4rem;
+  text-align: center;
+  padding-right: 5rem;
+  margin-top: 0rem;
+}
+
+.keys {
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.2rem;
+}
+
+.color-picker {
+  margin-top: 2.7vw;
+  margin-left: 6vw;
+  width: 9vw;
+  height: 2.3vw;
+  text-align: center;
+  font-weight: bolder;
+  /*border: 0.1px solid rgb(223, 223, 223);*/
+}
+
+.pickerstyle {
+  margin-left: 4%;
+  margin-bottom: 3rem;
+  align-items: center;
+  
+}
+
+.pickerstyle2 {
+  margin-left: 4%;
+  margin-bottom: 0rem;
+  align-items: center;
+  
+}
+
+.top {
+  height: 1.7vw;
+  width: 100%;
+  background-image: url("./images/up2.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  left: 3%;
+  position: relative;
+  top: 0rem;
+
+}
+
+.down {
+  height: 1.7vw;
+  width: 100%;
+  background-image: url("./images/down2.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  left: 3%;
+  position: relative;
+  top: 0rem;
+  
+}
+
+.left {
+  height: 1.7vw;
+  width: 100%;
+  background-image: url("./images/left2.svg");
+  background-repeat: no-repeat;
+  background-position: left;
+  float: left;
+  margin-left: 4rem;
+ 
+}
+
+.right {
+  height: 1.7vw;
+  width: 100%;
+  background-image: url("./images/right2.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+  margin-top: -7%;
+  float: right;
+  margin-right: 3rem;
+  
+  
+}
+
+
+.mediumtext {
+  font-weight: lighter;
+  margin: 4vw;
+}
+
+.layoutName {
+  margin-left: 5vw;
+  margin-top: 2vw;
+  text-align: left;
+  font-weight: bold;
+}
+
+.instructions {
+  margin-left: 5vw;
+  padding-top: 0.5vw;
+  font-weight: normal;
+}
+
+.sketch-picker {
+  position: absolute;
+  left: 7%;
+  right: 5%;
+  bottom: 0;
+  margin: 0 auto;
+  z-index: 1000;
+}
+
+button {
+  width: 90%;
+  background-color: rgb(253, 209, 53);
+  height: 100%;
+  font-size: 1.5rem;
+  color: rgb(33, 33, 33);
+}
+/*
+@media screen and (max-width: 300px) {
+  .sketch-picker {
+      height:100%;
+   }
+ }*/
+
+.tool {
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  height: 80px;
+  background-repeat: no-repeat;
+}
+
+.tool p {
+  width: 70%;
+  height: 80%;
+  background-image: url("./images/logo.png");
+  background-repeat: no-repeat;
+  background-position: left center no-repeat;
+  margin-left: 0%;
+  margin-top: 0.5%;
+  overflow: hidden;
+}
+
+.title {
+  text-align: center;
+  font-weight: lighter;
+  color: white;
+  font-size: 2rem;
+  margin: 0 auto;
+}

@@ -1,0 +1,27 @@
+.info-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 600px;
+  height: 250px;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: white;
+  z-index: 100;
+  position: absolute;
+  top: 30%;
+}
+
+.text-info {
+  font-size: 40px;
+}
+
+.button {
+  font-size: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 15px 5px 15px;
+  background-color: #fdd135;
+}
