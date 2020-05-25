@@ -1,11 +1,17 @@
 import React from "react";
-import './SafeZone.css'
+import "./SafeZone.css";
 
-export const SafeZone = () => {
+export const SafeZone = ({ currentSafeZoneColor }) => {
   return (
     <>
-    <div className="action-safe"></div>
-      <div className="title-safe"></div>
+      <div
+        className="action-safe"
+        style={{ border: `1px dashed ${currentSafeZoneColor}` }}
+      ></div>
+      <div
+        className="title-safe"
+        style={{ border: `1px dashed ${currentSafeZoneColor}` }}
+      ></div>
     </>
   );
 };

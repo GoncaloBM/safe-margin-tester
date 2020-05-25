@@ -13,6 +13,9 @@
   margin-left: 2vw;
   float: left;
   bottom: 2%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .text {
@@ -31,7 +34,7 @@
   width: 24%;
   margin-top: 4.5%;
   float: right;
- margin-bottom: 1%;
+  margin-bottom: 1%;
   left: 3%;
 }
 
@@ -101,14 +104,12 @@
   margin-left: 4%;
   margin-bottom: 3rem;
   align-items: center;
-  
 }
 
 .pickerstyle2 {
   margin-left: 4%;
   margin-bottom: 0rem;
   align-items: center;
-  
 }
 
 .top {
@@ -120,7 +121,6 @@
   left: 3%;
   position: relative;
   top: 0rem;
-
 }
 
 .down {
@@ -132,7 +132,6 @@
   left: 3%;
   position: relative;
   top: 0rem;
-  
 }
 
 .left {
@@ -143,7 +142,6 @@
   background-position: left;
   float: left;
   margin-left: 4rem;
- 
 }
 
 .right {
@@ -155,10 +153,7 @@
   margin-top: -7%;
   float: right;
   margin-right: 3rem;
-  
-  
 }
-
 
 .mediumtext {
   font-weight: lighter;

@@ -3,7 +3,6 @@
   position: absolute;
   width: 95%;
   height: 95%;
-  border: 1px dashed rgb(0, 0, 0);
 }
 
 .action-safe {
@@ -11,5 +10,4 @@
   position: absolute;
   width: 90%;
   height: 90%;
-  border: 1px dashed rgb(0, 0, 0);
 }

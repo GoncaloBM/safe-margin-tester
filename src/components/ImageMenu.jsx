@@ -3,10 +3,11 @@ import "./ImageMenu.css";
 import axios from "axios";
 import useEventListener from "./../use-event-listener";
 
-export const ImageMenu = ({ visible }) => {
+export const ImageMenu = ({ imageFromChoice, changeSafeZoneColor }) => {
   const [componentMounted, setComponentMounted] = useState(false);
   const [imageDb, setImageDB] = useState("");
   const [imageFocus, setImageFocus] = useState(0);
+  const [currentIndexSafeColor, setCurrentIndexSafeColor] = useState(0);
 
   const fetchImages = () => {
     if (!componentMounted) {
@@ -18,32 +19,64 @@ export const ImageMenu = ({ visible }) => {
     }
   };
 
+  const changeSafeColor = (e) => {
+    const colors = ["red", "yellow", "blue", "black"];
+    if (e.keyCode === 39) {
+      if (currentIndexSafeColor === colors.length) {
+        return;
+      } else {
+        setCurrentIndexSafeColor(currentIndexSafeColor + 1);
+        changeSafeZoneColor(colors[currentIndexSafeColor]);
+      }
+    } else if (e.keyCode === 37) {
+      if (currentIndexSafeColor === 0) {
+        return;
+      } else {
+        setCurrentIndexSafeColor(currentIndexSafeColor + -1);
+        changeSafeZoneColor(colors[currentIndexSafeColor]);
+      }
+    }
+  };
+
   const changeFocusImage = (e) => {
     e.preventDefault();
-    if (e.keycode === 40) {
-      alert("hey");
-      setImageFocus(imageFocus + 1);
-    } else if (e.keycode === 38) {
-      alert("hey");
-      setImageFocus(imageFocus - 1);
+    if (e.keyCode === 40) {
+      if (imageFocus === imageDb.length) {
+        setImageFocus(1);
+        imageFromChoice(imageDb[0].url);
+      } else {
+        setImageFocus(imageFocus + 1);
+        imageFromChoice(imageDb[imageFocus].url);
+      }
+    } else if (e.keyCode === 38) {
+      if (imageFocus === 1) {
+        setImageFocus(imageDb.length);
+        imageFromChoice(imageDb[imageDb.length - 1].url);
+      } else {
+        setImageFocus(imageFocus - 1);
+        imageFromChoice(imageDb[imageFocus - 1].url);
+      }
     }
   };
 
   useEventListener("keydown", changeFocusImage);
+  useEventListener("keydown", changeSafeColor);
 
   useEffect(() => {
     fetchImages();
   });
 
   return (
-    <div className="ActionMenu" style={{ marginTop: visible && "1.5%" }}>
+    <div className="ActionMenu" style={{ marginTop: "1.5%" }}>
       {imageDb && (
         <>
           {imageDb.map((image, index) => {
             return (
               <div
                 className="image-option"
-                style={{ backgroundColor: index === imageFocus ? "red" : "" }}
+                style={{
+                  backgroundColor: index + 1 === imageFocus ? "red" : "",
+                }}
               >
                 <div className="image-name">{image.url}</div>
                 <div
