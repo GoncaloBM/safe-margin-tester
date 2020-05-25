@@ -4,6 +4,7 @@ import "./Board.css";
 import { ColorPicker } from "./components/ColorPicker";
 import { Board } from "./components/Board";
 import useEventListener from "./use-event-listener";
+import { ImageMenu } from "./components/ImageMenu";
 
 function App() {
   const [boardColor, setBoardColor] = useState("#ffffff");
@@ -91,88 +92,7 @@ function App() {
         buttonType={buttonType}
       />
 
-      <div className="ActionMenu" style={{ marginTop: visible && "1.5%" }}>
-        <div
-          className="hexaTab-top"
-          style={{ top: visible && "67%", height: visible && "32%" }}
-        >
-          <p className="instructions">/ Instructions Keys /</p>
-          <p className="keys">
-            <strong>SPACE: </strong> Enable/disable Safe Margin
-          </p>
-          <p className="keys">
-            <strong>RIGHT Arrow: </strong>Enable/disable Board Color
-          </p>
-          <p className="keys">
-            <strong>LEFT Arrow: </strong>Enable/disable Text Color
-          </p>
-          <p className="keys">
-            <strong>UP/DOWN Arrow:</strong> Run through RGB color
-          </p>
-          <p className="keys">
-            <strong>+ / - : </strong>Increase/Decrease Font Size
-          </p>
-          <p className="keys">
-            <strong>SHIFT: </strong>Enable/disable Peacock Font
-          </p>
-        </div>
-        <div className="ActionButton" style={{ marginTop: !visible && "75%" }}>
-          <div className="top"></div>
-          <div className="pickerstyle2">
-            <ColorPicker
-              text={"Board"}
-              defineColor={defineBoardColor}
-              button={"board"}
-              defineButton={defineButton}
-              buttonType={buttonType}
-              initialColor={boardColor}
-              instructions={instructions}
-              changeColor={changeColor}
-              changingColor={changingColor}
-              defineVisiblePalete={defineVisiblePalete}
-              showDisableInfo={showDisableInfo}
-            />
-          </div>
-          <div
-            className="left"
-            style={{
-              marginTop: visible && "37%",
-              marginLeft: visible && "24%",
-            }}
-          ></div>
-          <div
-            className="right"
-            style={{ marginRight: visible && "15%" }}
-          ></div>
-          <div className="pickerstyle" style={{ marginTop: visible && "80%" }}>
-            <ColorPicker
-              text={"Text"}
-              defineColor={defineTextColor}
-              button={"text"}
-              defineButton={defineButton}
-              buttonType={buttonType}
-              initialColor={textColor}
-              instructions={instructions}
-              changeColor={changeColor}
-              changingColor={changingColor}
-              defineVisiblePalete={defineVisiblePalete}
-              showDisableInfo={showDisableInfo}
-            />
-          </div>
-          <div className="down" style={{ marginTop: visible && "-32%" }}></div>
-        </div>
-        <div className="hexaTab" style={{ bottom: visible && "34%" }}>
-          <p className="aligntext">{textOfColor}</p>
-          {buttonType && (
-            <>
-              {/* <p className="aligntext">Changing {buttonType} color.</p> */}
-              <p className="hexadecimal" style={{ color: colorType }}>
-                {buttonType === "board" ? boardColor : textColor}
-              </p>
-            </>
-          )}
-        </div>
-      </div>
+      <ImageMenu visible={visible}/>
     </div>
   );
 }
